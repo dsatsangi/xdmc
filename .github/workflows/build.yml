@@ -14,7 +14,7 @@ jobs:
       - name: Download the source code
         uses: actions/checkout@v1
       - name: Build
-        uses: nahueespinosa/mplabx-xc8@master
+        uses: dsatsangi/mplab-xc8-build-action@main
         with:
           project: Blink128a.X
           configuration: default
