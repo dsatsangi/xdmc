@@ -1,0 +1,20 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build the project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the source code
+        uses: actions/checkout@v1
+      - name: Build
+        uses: nahueespinosa/mplabx-xc8@master
+        with:
+          project: Blink128a.X
+          configuration: default
