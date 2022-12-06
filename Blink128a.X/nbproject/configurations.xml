@@ -34,7 +34,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="ATmega_DFP" vendor="Microchip" version="2.0.12"/>
+        <pack name="ATmega_DFP" vendor="Microchip" version="2.4.131"/>
       </packs>
       <compileType>
         <linkerTool>
