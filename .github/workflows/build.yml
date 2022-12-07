@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - deny
+      - main
   pull_request:
     branches:
       - main
