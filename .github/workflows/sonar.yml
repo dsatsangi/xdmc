@@ -31,9 +31,7 @@ jobs:
       - name: Download and set up Dependencies
         run: |
           dpkg --add-architecture i386 && apt-get update
-        run: |
           apt-get install -y zip libc6:i386 libx11-6:i386 libxext6:i386 libstdc++6:i386 libexpat1:i386 wget sudo make
-        run: |
           rm -rf /var/lib/apt/lists/*
       - name: Download and set up sonar-scanner
         env:
