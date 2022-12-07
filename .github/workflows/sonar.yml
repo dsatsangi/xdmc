@@ -53,7 +53,7 @@ jobs:
           ls -all
           rm -rf $1/dist
           rm -rf $1/build
-          build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory make -C $1 CONF=$2 build
+          build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory make -C Blink128a.X CONF=default build
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
