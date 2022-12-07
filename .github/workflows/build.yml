@@ -12,11 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download the source code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
+        uses: actions/cache@v3
       - name: Build with MPLAB 6.00
         uses: dsatsangi/mplab-xc8-build-action@debug
         with:
           project: Blink128a.X
           configuration: default
+      - name: Install sonar-scanner and build-wrapper
+        uses: SonarSource/sonarcloud-github-c-cpp@v1
+      - name: Run build-wrapper
+        run: |
+          build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} make -C Blink128a.X CONF=default build
+      - name: Run sonar-scanner
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          sonar-scanner --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}"

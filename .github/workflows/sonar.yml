@@ -16,9 +16,8 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Install sonar-scanner and build-wrapper
-        uses: SonarSource/sonarcloud-github-c-cpp@v1
-      - name: Install MPLAB and XC82.10
         uses: dsatsangi/mplab-xc8-build-action@debug
+        uses: SonarSource/sonarcloud-github-c-cpp@v1
         with:
           project: Blink128a.X
           configuration: default
