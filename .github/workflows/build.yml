@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Download the source code
         uses: actions/checkout@v1
-      - name: Build with MPLAB 6.00
+      - name: Build with MPLAB 6.00 and XC8 2.31
         uses: dsatsangi/mplab-xc8-build-action@debug
         with:
           project: Blink128a.X
