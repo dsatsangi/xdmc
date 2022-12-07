@@ -53,6 +53,8 @@ jobs:
           ls -all
           rm -rf $1/dist
           rm -rf $1/build
+          ls /opt/microchip/xc8/
+          ls /opt/mplabx
           build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory make -C Blink128a.X CONF=default build
       - name: Run sonar-scanner
         env:
