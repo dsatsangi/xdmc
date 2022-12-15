@@ -18,3 +18,6 @@ jobs:
         with:
           project: Blink128a.X
           configuration: default
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
